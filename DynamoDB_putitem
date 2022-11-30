@@ -1,11 +1,11 @@
 import json
 import boto3
 
-dynamodb = boto3.resource('dynamodb')
-table= dynamodb.Table('planets')
+dynamodb = boto3.resource('dynamodb') #service resource, see AWS boto3 documentation
+table= dynamodb.Table('planets') #Table is a sub resource from the documentation
 
 def lambda_handler(event, context):
-    table.put_item(
+    table.put_item(                #put_item, get_item, delete_item are some resource available actions
         Item={
             'id': 'heaven',
             'tmp': 'Perfect'
